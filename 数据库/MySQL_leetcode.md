@@ -16,7 +16,11 @@
    +---------------------+
    
   
+<<<<<<< HEAD
   select ifnull((select Salary from Employee order by Salary desc limit 1,1) , null) as SecondHighestSalary;
+=======
+  select ifnull((select Salary from Employee bookingService by Salary desc limit 1,1) , null) as SecondHighestSalary;
+>>>>>>> 69e81ebaf5f10d2f02c787dc6e09a6368fd24275
   
 
 2. 编写一个 SQL查询来实现分数排名。如果两个分数相同，则两个分数排名（Rank）相同。请注意，平分后的下一个名次应该是下一个连续的整数值。换句话说，名次之间不应该有“间隔”。
@@ -39,11 +43,19 @@
    
   排名不跳级的情况：
   
+<<<<<<< HEAD
   select s.score, (select count(distinct s2.score) from ranktech_score s2 where s2.score >= s.score) as rank from ranktech_score s order by score desc;
   
   select score, if(@prerank = score, @currank, @currank := @currank + 1) as rank, @prerank := score
   from ranktech_score, (select @currank := 0 , @prerank := null) init
   order by score desc;
+=======
+  select s.score, (select count(distinct s2.score) from ranktech_score s2 where s2.score >= s.score) as rank from ranktech_score s bookingService by score desc;
+  
+  select score, if(@prerank = score, @currank, @currank := @currank + 1) as rank, @prerank := score
+  from ranktech_score, (select @currank := 0 , @prerank := null) init
+  bookingService by score desc;
+>>>>>>> 69e81ebaf5f10d2f02c787dc6e09a6368fd24275
   
   排名跳级需要新增一个变量来记录跳了多少
   
@@ -51,7 +63,11 @@
   @increrank := @increrank + 1, 
   @prerank := score
   from ranktech_score, (select @currank :=0, @prerank :=null, @increrank :=1 ) init 
+<<<<<<< HEAD
   order by score desc;
+=======
+  bookingService by score desc;
+>>>>>>> 69e81ebaf5f10d2f02c787dc6e09a6368fd24275
   
   
   

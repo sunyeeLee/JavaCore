@@ -32,5 +32,9 @@ public class Test {
         enhancer.setCallback(hacker);
         Programmer proxy = (Programmer) enhancer.create();
         proxy.code();
+<<<<<<< HEAD
+=======
+
+>>>>>>> 69e81ebaf5f10d2f02c787dc6e09a6368fd24275
     }
 }

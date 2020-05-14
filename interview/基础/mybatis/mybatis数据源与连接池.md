@@ -279,7 +279,11 @@
         1。在工作中发现mybatis默认的连接池POOLED，运行时间长了会报莫名其妙的连接失败错误。
         2。Druid是阿里开源的数据库连接池，性能比POOLED好的多
         
+<<<<<<< HEAD
       综上，我们一般使用Druid活着是hikare
+=======
+      综上，我们一般使用Druid或者是hikare
+>>>>>>> 69e81ebaf5f10d2f02c787dc6e09a6368fd24275
       
       
     2。Druid如何接管myabtis连接池?

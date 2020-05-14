@@ -10,7 +10,11 @@ package com.sunyee.javacore.designpattern.immutable;
  * 不变模式不需要同步。
  * Java中不变的模式的案例有：
  * java.lang.String
+<<<<<<< HEAD
  * java.lang.Boolean
+=======
+ * java.lang.Boolean、
+>>>>>>> 69e81ebaf5f10d2f02c787dc6e09a6368fd24275
  * java.lang.Byte
  * java.lang.Character
  * java.lang.Double

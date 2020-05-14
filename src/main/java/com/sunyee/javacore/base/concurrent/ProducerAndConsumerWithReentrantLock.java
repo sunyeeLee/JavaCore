@@ -18,7 +18,11 @@ public class ProducerAndConsumerWithReentrantLock {
 
     private final Condition FULL_CONDITION = lock.newCondition();
 
+<<<<<<< HEAD
     private final Condition NOT_FULL_CONDITION = lock.newCondition();
+=======
+    private final Condition NOT_FULL_CONDIFTION = lock.newCondition();
+>>>>>>> 69e81ebaf5f10d2f02c787dc6e09a6368fd24275
 
     class Producer implements Runnable{
 
@@ -41,7 +45,11 @@ public class ProducerAndConsumerWithReentrantLock {
                     }
                     count++;
                     System.out.println("生产者: " + Thread.currentThread().getName() + "生产, 目前共有: " + count);
+<<<<<<< HEAD
                     NOT_FULL_CONDITION.signal();
+=======
+                    NOT_FULL_CONDIFTION.signal();
+>>>>>>> 69e81ebaf5f10d2f02c787dc6e09a6368fd24275
                 } finally {
                     lock.unlock();
                 }
@@ -63,7 +71,11 @@ public class ProducerAndConsumerWithReentrantLock {
 
                 try{
                     while(count == 0){
+<<<<<<< HEAD
                         NOT_FULL_CONDITION.await();
+=======
+                        NOT_FULL_CONDIFTION.await();
+>>>>>>> 69e81ebaf5f10d2f02c787dc6e09a6368fd24275
                     }
                     count--;
                     System.out.println("消费者： " + Thread.currentThread().getName() + "消费, 目前共有： " + count);

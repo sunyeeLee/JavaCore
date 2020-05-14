@@ -27,7 +27,11 @@ public class App {
         //4.设置RealSubject
         proxyFactoryBean.setTarget(railwayStation);
         //5.使用JDK基于接口实现机制的动态代理生成Proxy代理对象，如果想使用CGLIB，需要将这个flag设置成true
+<<<<<<< HEAD
         proxyFactoryBean.setProxyTargetClass(false);
+=======
+        proxyFactoryBean.setProxyTargetClass(true);
+>>>>>>> 69e81ebaf5f10d2f02c787dc6e09a6368fd24275
 
         //6. 添加不同的advice,  各种Advice本质而言是一个方法调用拦截器，
         proxyFactoryBean.addAdvice(afterReturningAdvice);
@@ -37,6 +41,9 @@ public class App {
         ITicketService ticketServiceProxy = (ITicketService) proxyFactoryBean.getObject();
         System.out.println("proxy: " + ticketServiceProxy.getClass());
         ticketServiceProxy.inquire();
+<<<<<<< HEAD
         ticketServiceProxy.sell();
+=======
+>>>>>>> 69e81ebaf5f10d2f02c787dc6e09a6368fd24275
     }
 }

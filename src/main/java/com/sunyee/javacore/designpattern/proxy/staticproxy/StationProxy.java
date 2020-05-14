@@ -30,7 +30,11 @@ public class StationProxy implements ITicketService {
         //2.调用真实业务逻辑
         station.sell();
         //3.后处理
+<<<<<<< HEAD
         this.takeHandlingFee();    //扣除手续费用
+=======
+        this.takeHandleingFee();    //扣除手续费用
+>>>>>>> 69e81ebaf5f10d2f02c787dc6e09a6368fd24275
         this.showAllertInfo("*****购票成功！*********");
     }
 
@@ -41,7 +45,11 @@ public class StationProxy implements ITicketService {
         //2.真实业务逻辑
         station.returnTicket();
         //3.后处理
+<<<<<<< HEAD
         this.takeHandlingFee();    //扣除费用
+=======
+        this.takeHandleingFee();    //扣除费用
+>>>>>>> 69e81ebaf5f10d2f02c787dc6e09a6368fd24275
         this.showAllertInfo("*****期待下次为您服务！******");
     }
 
@@ -56,7 +64,11 @@ public class StationProxy implements ITicketService {
     /**
      * 收取手续费
      */
+<<<<<<< HEAD
     private void takeHandlingFee(){
+=======
+    private void takeHandleingFee(){
+>>>>>>> 69e81ebaf5f10d2f02c787dc6e09a6368fd24275
         System.out.println("手续手续费，打印发票...........\n");
     }
 }
