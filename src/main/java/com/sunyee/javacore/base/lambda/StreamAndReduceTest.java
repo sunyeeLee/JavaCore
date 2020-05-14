@@ -1,12 +1,9 @@
 package com.sunyee.javacore.base.lambda;
 
-<<<<<<< HEAD
 import java.lang.reflect.Array;
 import java.util.*;
-=======
 import java.util.Arrays;
 import java.util.List;
->>>>>>> 69e81ebaf5f10d2f02c787dc6e09a6368fd24275
 
 /**
  * Created by lishunyi on 2019/9/23
@@ -26,7 +23,6 @@ public class StreamAndReduceTest {
         //new way by lambda expression
         sum = list.stream().map(n -> n * n).reduce((x, y) -> x + y).get();
         System.out.println(sum);
-<<<<<<< HEAD
 
         Set<String> workflowVariableSet = new HashSet<>();
         List<String> strList = new ArrayList<>(Arrays.asList("age", "age,isWhite", "age,name", "name,isWhite"));
@@ -39,7 +35,5 @@ public class StreamAndReduceTest {
             }
         });
         System.out.println(workflowVariableSet);
-=======
->>>>>>> 69e81ebaf5f10d2f02c787dc6e09a6368fd24275
     }
 }
