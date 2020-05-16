@@ -1,10 +1,7 @@
 package com.sunyee.javacore.designpattern.proxy.dynamicporxy.jdk;
 
-<<<<<<< HEAD
 import com.sunyee.javacore.designpattern.proxy.dynamicporxy.ProxyUtils;
 
-=======
->>>>>>> 69e81ebaf5f10d2f02c787dc6e09a6368fd24275
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
 
@@ -38,18 +35,12 @@ public class Test {
                  c.然后调用newInstance()创建实例
 		 */
         Object o = Proxy.newProxyInstance(classLoader, interfaces, invocationHandler);
-<<<<<<< HEAD
         System.out.println(o.getClass().getName());
-=======
->>>>>>> 69e81ebaf5f10d2f02c787dc6e09a6368fd24275
         Vehicle vehicle = (Vehicle) o;
         vehicle.drive();
         Recharhable recharhable = (Recharhable)o;
         recharhable.recharge();
-<<<<<<< HEAD
 
         ProxyUtils.generateClassFile(ElectricCar.class, "ElectricCarProxy");
-=======
->>>>>>> 69e81ebaf5f10d2f02c787dc6e09a6368fd24275
     }
 }
