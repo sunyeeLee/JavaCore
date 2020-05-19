@@ -13,15 +13,6 @@ import java.util.List;
  */
 public class SamePartInLinkedList {
 
-    static class Node{
-        public int value;
-        public Node next;
-
-        public Node(int value){
-            this.value = value;
-        }
-    }
-
     public static void printSamePartInLinkedList(Node list1, Node list2){
         if (list1 == null || list2 == null){
             throw new RuntimeException("Linked List is empty!!!");

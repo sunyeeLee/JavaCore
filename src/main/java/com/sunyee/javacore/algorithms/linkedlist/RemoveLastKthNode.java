@@ -10,14 +10,6 @@ package com.sunyee.javacore.algorithms.linkedlist;
  */
 public class RemoveLastKthNode {
 
-    static class Node{
-        public int value;
-        public Node next;
-        public Node(int value){
-            this.value = value;
-        }
-    }
-
     public static Node removeLastKthNode(Node head, int k){
         if (head == null || head.next == null || k < 1){
             return head;

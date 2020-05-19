@@ -5,19 +5,6 @@ package com.sunyee.javacore.algorithms.linkedlist;
  * Created by lishunyi on 2019/7/22
  */
 public class ReverseLinkedList {
-    static class Node {
-        int data;
-        Node next;
-
-        public Node(int data){
-            this.data = data;
-        }
-
-        @Override
-        public String toString(){
-            return "Node: " + data;
-        }
-    }
 
     public static void reverse(Node head) {
         if (null == head || head.next == null) {
@@ -40,7 +27,7 @@ public class ReverseLinkedList {
         head.next = pcur;
         Node temp = head.next;
         while (temp != null) {
-            System.out.println(temp.data);
+            System.out.println(temp.value);
             temp = temp.next;
         }
     }
