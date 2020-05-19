@@ -42,6 +42,5 @@ public class Test {
         recharhable.recharge();
 
         ProxyUtils.generateClassFile(ElectricCar.class, "ElectricCarProxy");
-
     }
 }

@@ -20,7 +20,6 @@ public class ProducerAndConsumerWithReentrantLock {
 
     private final Condition NOT_FULL_CONDITION = lock.newCondition();
 
-
     class Producer implements Runnable{
 
         @Override

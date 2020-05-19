@@ -12,7 +12,7 @@ public class ProducerAndConsumerWithWaitAndNotify {
 
     private final String lock = "LOCK";
 
-    class Producer implements Runnable{
+    class Prodocuer implements Runnable{
 
         @Override
         public void run() {
@@ -71,7 +71,7 @@ public class ProducerAndConsumerWithWaitAndNotify {
     public static void main(String[] args) {
         ProducerAndConsumerWithWaitAndNotify bucket = new ProducerAndConsumerWithWaitAndNotify();
         for(int i = 0; i < 4; i++){
-            new Thread(bucket.new Producer()).start();
+            new Thread(bucket.new Prodocuer()).start();
         }
         for (int i = 0; i < 4; i++){
             new Thread(bucket.new Consumer()).start();
