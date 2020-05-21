@@ -15,7 +15,36 @@ package com.sunyee.javacore.algorithms.linkedlist;
  */
 public class JosephusNode {
 
-    public static void main(String[] args) {
+    public static Node josephusNode(Node head, int m){
+        if (head == null || head.next == null || m < 1){
+            return head;
+        }
+        Node last = head;
+        while (last.next != head){
+            last = last.next;
+        }
+        int count = 0;
+        while (head != last){
+            if (++count == m){
+                last.next = head.next;
+                count = 0;
+            } else {
+                last = last.next;
+            }
+            head = last.next;
+        }
+        return head;
+    }
 
+    public static void main(String[] args) {
+        Node head = new Node(1);
+        Node node1 = new Node(2);
+        Node node2 = new Node(3);
+        Node node3 = new Node(4);
+        head.next = node1;
+        node1.next = node2;
+        node2.next = node3;
+        node3.next = head;
+        System.out.println(josephusNode(head, 3));
     }
 }
