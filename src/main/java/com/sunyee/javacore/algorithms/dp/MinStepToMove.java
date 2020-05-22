@@ -36,7 +36,7 @@ package com.sunyee.javacore.algorithms.dp;
  *
  *      dp[0] [j] = arr[0] [j] + dp[0] [j-1]; // 相当于最上面一行，机器人只能一直往右走
  *
- *      dp[i] [0] = arr[i] [0] + dp[i] [0]; // 相当于最左一列，机器人只能一直往下走
+ *      dp[i] [0] = arr[i] [0] + dp[i-1] [0]; // 相当于最左一列，机器人只能一直往下走
  * Created by lishunyi on 2020/5/21
  */
 public class MinStepToMove {
