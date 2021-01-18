@@ -45,8 +45,25 @@ public class CalculationWithoutMathLibrary {
         System.out.println("sqrt(2): " + finalMid);
     }
 
+    public static void sqrt2(int percision){
+        double high = 1.5, low = 1.4;
+        double mid = (high + low) / 2;
+        while ((high - low ) > CONDITION){
+            if ((mid * mid) > 2){
+                high = mid;
+            } else {
+                low = mid;
+            }
+            mid = (low + high) / 2;
+        }
+        int index = String.valueOf(mid).indexOf(".");
+        String finalMid = String.valueOf(mid).substring(0, index + percision);
+        System.out.println("sqrt(2): " + finalMid);
+
+    }
+
     public static void main(String[] args) {
-        sqrt(11);
+        sqrt2(11);
         System.out.println("sqrt 2 in math library: " + Math.sqrt(2));
     }
 }
