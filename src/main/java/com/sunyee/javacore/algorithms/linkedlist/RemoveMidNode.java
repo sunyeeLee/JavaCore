@@ -29,7 +29,7 @@ public class RemoveMidNode {
 
     public static void printlnNode(Node head){
         while (head != null){
-            System.out.print(head + " ");
+            System.out.print(head.value + " ");
             head = head.next;
         }
         System.out.println();
