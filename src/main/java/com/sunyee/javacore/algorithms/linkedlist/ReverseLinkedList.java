@@ -32,6 +32,22 @@ public class ReverseLinkedList {
         }
     }
 
+    public static void reverse2(Node head){
+        Node temp;
+        Node cur = head;
+        Node pre = null;
+        while (cur != null){
+            temp = cur.next;
+            cur.next = pre; //翻转
+            pre = cur;
+            cur = temp;
+        }
+        while (pre != null) {
+            System.out.println(pre.value);
+            pre = pre.next;
+        }
+    }
+
     public static void main(String[] args) {
         Node head = new Node(0);
         Node node1 = new Node(1);
@@ -42,6 +58,6 @@ public class ReverseLinkedList {
         node1.next = node2;
         node2.next = node3;
         node3.next = node4;
-        reverse(head);
+        reverse2(head);
     }
 }
