@@ -54,6 +54,7 @@ public class HappyNumbers {
             if (sum == 1){
                 return true;
             } else if (resultSet.contains(sum)){
+                // 如果这个sum曾经出现过，说明已经陷入了无限循环了，立刻return false
                 return false;
             } else {
                 resultSet.add(sum);
