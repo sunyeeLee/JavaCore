@@ -30,7 +30,6 @@ public class ReverseString {
         char temp = array[i];
         array[i] = array[j];
         array[j] = temp;
-
     }
 
     public static void main(String[] args) {
