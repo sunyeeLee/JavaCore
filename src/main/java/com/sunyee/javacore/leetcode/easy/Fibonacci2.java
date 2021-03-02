@@ -1,6 +1,7 @@
 package com.sunyee.javacore.leetcode.easy;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -71,6 +72,29 @@ public class Fibonacci2 {
         List<Integer> memo = new ArrayList<>(Collections.nCopies(n+1, 0));
         return helper(memo, n);
     }
+
+    /**
+     * 通过动态规划的方式求斐波那契数字。
+     * @return fibonacci number
+     */
+    public static int getFibonacciByDp(int n){
+        if (n < 0){
+            throw new RuntimeException("index error!!!");
+        }
+        Integer[] dp = new Integer[n+1];    //保存第n个数字的斐波那契数字
+        Arrays.fill(dp,0);
+        if (n <= 1){
+            return 1;
+        }
+        //初始化条件
+        dp[0] = dp[1] = 1;
+        for (int i = 2; i <= n; i++){
+            dp[i] = dp[i-1] + dp[i-2];
+        }
+        return dp[n];
+    }
+
+
     private static int helper(List<Integer> memo, int n){
         if (n <= 1){
             return 1;
@@ -96,6 +120,9 @@ public class Fibonacci2 {
         System.out.println(getFibonacciByRecursiveAndPrune(0));
         System.out.println(getFibonacciByRecursiveAndPrune(2));
         System.out.println(getFibonacciByRecursiveAndPrune(10));
-
+        System.out.println("***********************");
+        System.out.println(getFibonacciByDp(0));
+        System.out.println(getFibonacciByDp(2));
+        System.out.println(getFibonacciByDp(10));
     }
 }
