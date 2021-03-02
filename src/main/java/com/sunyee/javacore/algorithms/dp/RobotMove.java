@@ -58,6 +58,6 @@ public class RobotMove {
     }
 
     public static void main(String[] args) {
-        System.out.println(pathsOfRobotMove(3, 0));
+        System.out.println(pathsOfRobotMove(3, 4));
     }
 }
