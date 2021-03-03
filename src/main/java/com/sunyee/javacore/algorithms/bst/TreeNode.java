@@ -4,6 +4,7 @@ public class TreeNode {
     public int value;
     public TreeNode left;
     public TreeNode right;
+    public TreeNode next;   //指向右侧的下一个指针
 
     public TreeNode(int value){
         this.value = value;
