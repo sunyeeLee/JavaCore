@@ -1,5 +1,6 @@
 package com.sunyee.javacore.algorithms.backtrace;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -30,17 +31,17 @@ import java.util.Queue;
  */
 public class FullArrange {
 
-    public List<Queue<Integer>> res = new LinkedList<>();
+    public List<List<Integer>> res = new LinkedList<>();
 
-    public List<Queue<Integer>> permute(int[] nums) {
-        Queue<Integer> track = new LinkedList<>();
+    public List<List<Integer>> permute(int[] nums) {
+        List<Integer> track = new LinkedList<>();
         backTrack(track, nums);
         return res;
     }
 
-    private void backTrack(Queue<Integer> track, int[] nums){
+    private void backTrack(List<Integer> track, int[] nums){
         if (track.size() == nums.length){
-            res.add(new LinkedList<>(track));
+            res.add(new ArrayList<>(track));
             return;
         }
 
@@ -49,11 +50,11 @@ public class FullArrange {
             if (track.contains(num))
                 continue;
             //做出选择
-            track.offer(num);
+            track.add(num);
             //backtrack
             backTrack(track, nums);
             //撤销选择
-            track.poll();
+            track.remove(track.size()-1);
         }
     }
 
