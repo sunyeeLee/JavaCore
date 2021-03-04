@@ -24,33 +24,24 @@ import java.util.*;
  */
 public class NumberArrangeByK {
 
-    public List<Set<Integer>> res = new ArrayList<>();
+    private List<List<Integer>> res = new ArrayList<>();
+    private List<Integer> path = new ArrayList<>();
 
-    public List<Set<Integer>> solution(int n, int k) {
-        Set<Integer> trace = new HashSet<>();
-        backTrace(trace, n, k, 1);
+    public List<List<Integer>> solution(int n, int k) {
+        backTrace(n, k, 1);
         return res;
     }
 
-    private void backTrace(Set<Integer> trace, int n, int k, int start) {
-        //结束条件
-        if (trace.size() == k) {
-            res.add(new HashSet<>(trace));
+    private void backTrace(int n, int k, int u) {
+        if (k == 0) {
+            res.add(new ArrayList<>(path));
             return;
         }
 
-        for (int num = start; num <= n ; num ++){
-            // 过滤非法条件
-            if (trace.contains(num)){
-                continue;
-            }
-
-            //做出选择
-            trace.add(num);
-            //进入下一步选择
-            backTrace(trace, n, k, start+1);
-            // 撤销选择
-            trace.remove(num);
+        for (int i = u; i <= n; i ++ ) {
+            path.add(i);
+            backTrace(n, k - 1, i + 1);
+            path.remove(path.size() - 1);
         }
     }
 
