@@ -1,5 +1,9 @@
 package com.sunyee.javacore.algorithms.backtrace;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * 第216题.组合总和III
  * 链接：https://leetcode-cn.com/problems/combination-sum-iii/
@@ -22,5 +26,39 @@ package com.sunyee.javacore.algorithms.backtrace;
  */
 public class CombinationSumIII {
 
+    public List<List<Integer>> res = new ArrayList<>();
 
+    public List<List<Integer>> combinationSum3(int n, int k){
+        List<Integer> trace = new ArrayList<>();
+        backTrace(trace, n, k, 1);
+        return res;
+    }
+
+    public void backTrace(List<Integer> trace, int target, int k, int start){
+        //结束条件
+        if (k == 0 && target == 0){
+            res.add(new ArrayList<>(trace));
+            return;
+        }
+        // 排除不合法的选择
+        if (target < start || k <= 0){
+            return;
+        }
+
+        //树的遍历
+        for (int num = start; num <= 9; num++){
+            // 做出选择
+            trace.add(num);
+            // 向深处遍历
+            backTrace(trace, target-num, k-1, num + 1);
+            // 撤销选择
+            trace.remove(trace.size()-1);
+        }
+    }
+
+    public static void main(String[] args) {
+        int k = 3;
+        int n = 9;
+        System.out.println(Arrays.deepToString(new CombinationSumIII().combinationSum3(n, k).toArray()));
+    }
 }
