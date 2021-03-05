@@ -1,4 +1,6 @@
-package com.sunyee.javacore.algorithms.bst;
+package com.sunyee.javacore.algorithms.bfs;
+
+import com.sunyee.javacore.algorithms.bst.TreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;
