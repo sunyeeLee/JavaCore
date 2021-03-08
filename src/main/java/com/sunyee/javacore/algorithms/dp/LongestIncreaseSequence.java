@@ -20,28 +20,28 @@ package com.sunyee.javacore.algorithms.dp;
  */
 public class LongestIncreaseSequence {
 
-    public static void getLongestIncreaseSequence(int[] arrrays){
-        if (arrrays.length <=1){
+    public static void getLongestIncreaseSequence(int[] arrays){
+        if (arrays.length <=1){
             return;
         }
         //初始化条件
         int longest = 0;
-        int m = arrrays.length;
+        int m = arrays.length;
         int[] dp = new int[m];
         for (int i=0; i< m; i++){
             dp[i] = 1;
         }
 
-        for (int x=0; x<arrrays.length;x++){
+        for (int x=0; x<arrays.length;x++){
             for (int p=0; p<x; p++){
-                if (arrrays[p] < arrrays[x]){
+                if (arrays[p] < arrays[x]){
                     dp[x] = Math.max(dp[x], dp[p]+1);
                 }
             }
             System.out.println("dp[" + x +"]=" + dp[x]);
         }
 
-        for (int i=0; i< arrrays.length; i++){
+        for (int i=0; i< arrays.length; i++){
             longest = Math.max(longest, dp[i]);
         }
 
