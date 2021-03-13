@@ -36,6 +36,7 @@ public class RobII {
     private int[] memo; //备忘录
 
     public int rob(int[] nums){
+        if (nums.length == 1) return nums[0];
         int n = nums.length;
         // 初始化备忘录
         memo = new int[nums.length];
