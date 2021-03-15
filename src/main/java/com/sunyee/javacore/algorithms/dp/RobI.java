@@ -48,7 +48,7 @@ public class RobI {
     }
 
     /**
-     * 该方法存在重叠子问题，可以使用备忘录记录子问题
+     * 该方法存在重叠子问题，可以使用备忘录记录子问题, 参考dp2()方法
      * @param nums
      * @param houseIndex
      * @return

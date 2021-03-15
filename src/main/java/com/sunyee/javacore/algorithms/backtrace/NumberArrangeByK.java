@@ -45,7 +45,28 @@ public class NumberArrangeByK {
         }
     }
 
+
+
+    public List<List<Integer>> solution2(int n, int k) {
+        backTrace2(n, k, 1);
+        return res;
+    }
+
+    private void backTrace2(int n, int k, int start) {
+        if (k == path.size()) {
+            res.add(new ArrayList<>(path));
+            return;
+        }
+
+        for (int i = start; i <= n; i ++ ) {
+            path.add(i);
+            backTrace2(n, k, i + 1);
+            path.remove(path.size() - 1);
+        }
+    }
+
+
     public static void main(String[] args) {
-        System.out.println(Arrays.deepToString(new NumberArrangeByK().solution(4, 2).toArray()));
+        System.out.println(Arrays.deepToString(new NumberArrangeByK().solution2(4, 2).toArray()));
     }
 }
