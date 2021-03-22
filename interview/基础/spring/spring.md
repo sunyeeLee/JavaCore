@@ -51,3 +51,18 @@
     
 #### Spring Boot的自动配置
     ![https://www.hollischuang.com/archives/1791]()
+    
+    
+#### Spring如何实现AOP？，您可以这样说：
+    AnnotationAwareAspectJAutoProxyCreator是AOP核心处理类
+    AnnotationAwareAspectJAutoProxyCreator实现了BeanProcessor，其中postProcessAfterInitialization是核心方法。
+    核心实现分为2步
+     getAdvicesAndAdvisorsForBean获取当前bean匹配的增强器 createProxy为当前bean创建代理
+    getAdvicesAndAdvisorsForBean核心逻辑如下
+     a. 找所有增强器，也就是所有@Aspect注解的Bean
+     b. 找匹配的增强器，也就是根据@Before，@After等注解上的表达式，与当前bean进行匹配，暴露匹配上的。
+     c. 对匹配的增强器进行扩展和排序，就是按照@Order或者PriorityOrdered的getOrder的数据值进行排序，越小的越靠前。
+    createProxy有2种创建方法，JDK代理或CGLIB
+     a. 如果设置了proxyTargetClass=true，一定是CGLIB代理
+     b. 如果proxyTargetClass=false，目标对象实现了接口，走JDK代理
+     c. 如果没有实现接口，走CGLIB代理
