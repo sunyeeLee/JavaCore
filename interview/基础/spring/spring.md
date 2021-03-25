@@ -47,7 +47,7 @@
             Environment env = context.getEnvironment();
             return env.containProperty("ENV_CN");
         }
-    }MessageQueueSelector
+    }
     
 #### Spring Boot的自动配置
     ![https://www.hollischuang.com/archives/1791]()
